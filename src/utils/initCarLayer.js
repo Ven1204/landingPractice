@@ -1,37 +1,82 @@
 import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
+import gsap from 'gsap';
 
 let camera, scene, renderer;
-let geometry, material, mesh;
+const loader = new GLTFLoader();
 
-// init
-init();
+export function init() {
 
-export function init(){
-  const camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
-  camera.position.z = 1;
+	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
+	camera.position.z = 2;
+    camera.rotation.z = 0;
+    camera.position.y = .2;
 
-  const scene = new THREE.Scene();
+	scene = new THREE.Scene();
 
-  const geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
-  const material = new THREE.MeshNormalMaterial();
-
-  const mesh = new THREE.Mesh( geometry, material );
-  scene.add( mesh );
-
-  const renderer = new THREE.WebGLRenderer( { antialias: true } );
-  renderer.setSize( window.innerWidth, window.innerHeight );
-  renderer.setAnimationLoop( animation );
-  document.body.appendChild( renderer.domElement );
+    const light = new THREE.AmbientLight( 0xffffff, 2 );
+    scene.add( light );
 
 
-// animation
+    loader.load("/models/car1/scene.gltf", (gltf) => {
+        let model = gltf.scene
+        model.scale.set(.20, .20, -.20)
 
-  function animation( time ) {
+        gsap.to(camera.position, {
+            z: 1,
+            duration: 2,
+            ease: "back.out(3)",
+            y: .2
+        })
+        // gsap.to(camera.rotation, {
+        //     z: 0,
+        //     duration: 1
+        // })
 
-    mesh.rotation.x = time / 2000;
-    mesh.rotation.y = time / 1000;
+        // gsap.to(model.rotation, {
+        //     x: 1,
+        //     duration: 1,
+        //     delay: 1
+        // })
+        // gsap.to(model.rotation, {
+        //     y: Math.PI * 1.75,
+        //     duration: 2,
+        //     delay: 1
+        // })
+        // gsap.to(model.scale, {
+        //     delay: 1,
+        //     duration: 1,
+        //     x: .25,
+        //     y: .25,
+        //     z: .25
+        // })
+        // gsap.to(model.position, {
+        //     delay: 1,
+        //     duration: 1,
+        //     x: .35,
+        //     y: .3
+        // })
 
-    renderer.render( scene, camera );
 
-  }
+
+        scene.add(model)
+    })
+
+	renderer = new THREE.WebGLRenderer( { antialias: true } );
+	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setAnimationLoop( animation );
+    renderer.setClearColor( 0x24242424, 1 );
+	document.body.appendChild( renderer.domElement );
+
+    window.addEventListener( 'resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+    });
+}
+
+function animation() {
+	renderer.render( scene, camera );
+
 }
