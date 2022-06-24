@@ -23,19 +23,19 @@ function App() {
         <div className="pricing-table">
           <div className="pricing-card">
             <p className="title">€ 999999</p>
-            <p className="info">asdfgsdfsf</p>
+            <p className="info">asdfgasfdgfhgjhkjgdfhdgafsashdjgdfhsdgasfagdshfjgfhdgdhfdhsdgsdfsfasdfgsdfsf</p>
             <button className="btn">Buy now</button>
           </div>
 
           <div className="pricing-card">
             <p className="title">€ 999999</p>
-            <p className="info">asdfgsdfsf</p>
+            <p className="info">asdfgasfdgfhgjhkjgdfhdgafsashdjgdfhsdgasfagdshfjgfhdgdhfdhsdgsdfsfasdfgsdfsf</p>
             <button className="btn">Buy now</button>
           </div>
 
           <div className="pricing-card">
             <p className="title">€ 999999</p>
-            <p className="info">asdfgsdfsf</p>
+            <p className="info">asdfgasfdgfhgjhkjgdfhdgafsashdjgdfhsdgasfagdshfjgfhdgdhfdhsdgsdfsf</p>
             <button className="btn">Buy now</button>
           </div>
         </div>
