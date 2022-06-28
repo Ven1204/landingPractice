@@ -2,9 +2,12 @@
   margin: 0;
   padding: 0;
 }
+.App{
+  z-index: 2;
+}
 
 body {
-  color: #fff;
+  color: #282828;
   font-family: Arial, Helvetica, sans-serif
 }
 
@@ -47,14 +50,21 @@ canvas {
   letter-spacing: 1px;
 }
 
-.pricing h1 {
-  text-align: center;
+.featured-car h1 {
+  text-align: left;
+  margin-left: 1em;
   font-size: 2.5em;
+  color: #fff;
 }
 
 .pricing-table {
-  padding: 3em;
+  padding: 1em 3em;
   display: flex;
+  /* background-color: #282828; */
+  z-index: -2;
+}
+.pricing-table :hover{
+  background-color: #a7a7a7;
 }
 
 .pricing-card {
@@ -64,9 +74,13 @@ canvas {
   transform: translate(-100px, 100px);
   opacity: 0;
   animation: 1s slideIn;
-  animation-delay: 2s;
+  animation-delay: 3s;
   animation-fill-mode: forwards;
+  margin: 1em 1em;
+  width: 50%;
 }
+
+
 
 @keyframes slideIn {
   to {
@@ -76,14 +90,14 @@ canvas {
 }
 
 .pricing-card:nth-child(2) {
-  margin: 0 2.5em;
+  /* margin: 0 2.5em; */
   transform: translate(0, 100px);
-  animation-delay: 2.2s;
+  animation-delay: 3.2s;
 }
 
 .pricing-card:nth-child(3) {
   transform: translate(100px, 100px);
-  animation-delay: 2.4s;
+  animation-delay: 3.4s;
 }
 
 
@@ -91,12 +105,22 @@ canvas {
 .pricing-card .title {
   font-size: 1.5em;
   font-weight: bold;
+  color: black;
 }
 
 .pricing-card .info {
-  margin: 1em 0;
+  margin: 1em 0.5em;
+  color: black;
+  text-align: justify;
+  padding-bottom: 2em;
 }
 
 .pricing-card .btn {
   background: #ffba02;
+  cursor: pointer;
+}
+
+.btn-container{
+  position: absolute;
+  bottom: 22px;
 }

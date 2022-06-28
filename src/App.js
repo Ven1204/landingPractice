@@ -9,38 +9,54 @@ function App() {
   return (
     <div className="App">
       <div className="hero">
-        <h1 className="title">Cars</h1>
-        <p className="text">asdgfbsjdfnsajddaflknafgoa´gsgfoáhigdsljdgfahg´WOJF´JGIOÑHGAOIGAGSKÑNGFDJ´LSFJLCKVBLNdslfgbsfds</p>
+        <h1 className="title">Super Cars</h1>
+         <p className="text"> Home of the ultra high-performance sports cars.</p>
         <p>
-          <button className="btn">English</button>
-          <button className="btn">Spanish</button>
+          <a className="btn" href='#'>Showroom</a>
+          <a className="btn" href='#'>Learn more</a>
 
         </p>
       </div>
-
-      <div className="pricing">
-        <h1>Our Packages</h1>
+      <div className="featured-car">
+        <h1>Featured</h1>
         <div className="pricing-table">
+
           <div className="pricing-card">
-            <p className="title">€ 999999</p>
-            <p className="info">asdfgasfdgfhgjhkjgdfhdgafsashdjgdfhsdgasfagdshfjgfhdgdhfdhsdgsdfsfasdfgsdfsf</p>
-            <button className="btn">Buy now</button>
+            <div className="pricing-card__inner">
+            <p className="title">Sports</p>
+            <p className="info">designed with an emphasis on dynamic performance, such as handling, acceleration, top speed, or thrill of driving.</p>
+            </div>
+            <div className="btn-container">
+              <a className="btn" href='#'>Show more</a>
+            </div>
+
           </div>
 
           <div className="pricing-card">
-            <p className="title">€ 999999</p>
-            <p className="info">asdfgasfdgfhgjhkjgdfhdgafsashdjgdfhsdgasfagdshfjgfhdgdhfdhsdgsdfsfasdfgsdfsf</p>
-            <button className="btn">Buy now</button>
+            <div className="pricing-card__inner">
+            <p className="title">Luxury</p>
+            <p className="info">provides increased price levels of comfort, equipment, amenities, quality, performance, and associated status compared to moderately priced cars.</p>
+            </div>
+            <div className="btn-container">
+              <a className="btn" href='#'>Show more</a>
+            </div>
           </div>
 
           <div className="pricing-card">
-            <p className="title">€ 999999</p>
-            <p className="info">asdfgasfdgfhgjhkjgdfhdgafsashdjgdfhsdgasfagdshfjgfhdgdhfdhsdgsdfsf</p>
-            <button className="btn">Buy now</button>
+            <div className="pricing-card__inner">
+            <p className="title">Others</p>
+            <p className="info">from Sedans, SUV, coupe, Convertibles and many more </p>
+            </div>
+            <div className="btn-container">
+              <a className="btn" href='#'>Show more</a>
+            </div>
           </div>
+
         </div>
+
       </div>
     </div>
+
   );
 }
 
